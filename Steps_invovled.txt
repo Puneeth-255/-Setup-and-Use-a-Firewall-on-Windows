@@ -1,0 +1,60 @@
+Task-4: Setup and Use a Firewall on windows
+------------------------------------------
+Objective: Configure and test basic firewall rules to allow or block traffic.
+
+Steps invovled :
+
+--->1. Accessing Windows Defender Firewall with Advanced Security:
+
+        Open the Start Menu and search for "Windows Defender Firewall ".
+	Click on "Windows Defender Firewall with Advanced Security" to open the console. 
+
+--->2. Creating a New Rule:
+
+	In the left pane, select either "Inbound Rules" or "Outbound Rules", depending on the direction of the traffic you want to control.
+	Click on "New Rule" in the right of screen. 
+
+--->3. Defining the Rule Type:
+
+	For Port-based rules:
+	Choose "Port" and click "Next".
+	Select on either the rule applies to TCP or UDP and specify the port number (or range). 
+	For Program-based rules:
+	Choose "Program" and click "Next". 
+	Select "This program path" and browse to the program's executable file. 
+	For Custom rules:
+	Choose "Custom" and click "Next". 
+	This option provides the most flexibility, allowing you to define specific protocols, scopes, and other parameters. 
+
+--->4. Defining the Action:
+
+	Choose whether to "Allow the connection", "Allow the connection if it is secured", or "Block the connection".
+	Click "Next".
+ 
+--->5. Defining the Scope:
+
+	Select the appropriate firewall profiles (Domain, Private, or Public) for which the rule should apply.
+	Click "Next".
+ 
+--->6. Naming the Rule:
+	Enter a name and an optional description for the rule and Click "Finish". 
+
+--->7. Testing the Rule:
+	 Port rules:
+	Use telnet <server_ip_address> <port_number> in the command prompt to test if the port is blocked or accessible.
+     	General Testing:
+	You can also use netstat -an | findstr :<port_number> to check for active connections on a specific port. 
+
+--->8. Modifying / removing firewall rules:
+	To manage existing rules: 
+	Open the Windows Firewall with Advanced Security console and go to Inbound Rules or Outbound Rules.
+	Right-click the rule you want to manage.
+	You can Disable Rule, Delete Rule, or access Properties to modify setting
+
+Summary:
+Windows Defender Firewall with Advanced Security is a built-in security feature that allows granular control over network traffic to and from your computer. 
+It provides a powerful, rule-based mechanism to protect your system from unauthorized access and potential threats.
+Control incoming traffic from external sources (internet, other networks) to your device. These are crucial for blocking unauthorized access, malware, and DDoS attacks.
+Control outgoing traffic from your device to external destinations. These rules help prevent data leaks, unauthorized data transmission, and the spread of malware.
+
+Thankyou.
